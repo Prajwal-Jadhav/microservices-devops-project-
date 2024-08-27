@@ -1,0 +1,21 @@
+# k8s/service-a-deployment.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-a
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: service-a
+  template:
+    metadata:
+      labels:
+        app: service-a
+    spec:
+      containers:
+      - name: service-a
+        image: service-a:latest
+        ports:
+        - containerPort: 5000
