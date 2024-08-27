@@ -17,4 +17,20 @@ This project showcases a microservices-based architecture for an eCommerce appli
 - **CI/CD:** Automates the process of building, testing, and deploying the application using Jenkins or GitHub Actions, ensuring quick and reliable delivery of updates.
 
 ## Project Structure
+microservices-devops-project/ │ ├── services/ │ ├── service-a/ │ │ ├── Dockerfile │ │ ├── app/ │ │ │ ├── main.py │ │ │ ├── requirements.txt │ │ └── tests/ │ │ └── test_main.py │ │ │ ├── service-b/ │ │ ├── Dockerfile │ │ ├── app/ │ │ │ ├── main.py │ │ │ ├── requirements.txt │ │ └── tests/ │ │ └── test_main.py │ │ │ └── service-c/ │ ├── Dockerfile │ ├── app/ │ │ ├── main.py │ │ ├── requirements.txt │ └── tests/ │ └── test_main.py │ ├── k8s/ │ ├── service-a-deployment.yaml │ ├── service-b-deployment.yaml │ ├── service-c-deployment.yaml │ ├── service-a-service.yaml │ ├── service-b-service.yaml │ └── service-c-service.yaml │ ├── ci-cd/ │ ├── Jenkinsfile │ └── github-actions/ │ ├── main.yml │ └── README.md
+
+## Getting Started
+
+### Prerequisites
+
+- **Docker:** Installed to build and run containerized applications.
+- **Kubernetes:** Set up locally using Minikube or on a cloud provider.
+- **CI/CD Tools:** Jenkins or GitHub Actions configured for automated builds and deployments.
+
+### Running Locally
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/microservices-devops-project.git
+   cd microservices-devops-project
 
