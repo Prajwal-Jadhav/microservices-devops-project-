@@ -18,4 +18,3 @@ This project showcases a microservices-based architecture for an eCommerce appli
 
 ## Project Structure
 
-microservices-devops-project/ │ ├── services/ │ ├── service-a/ │ │ ├── Dockerfile │ │ ├── app/ │ │ │ ├── main.py │ │ │ ├── requirements.txt │ │ └── tests/ │ │ └── test_main.py │ │ │ ├── service-b/ │ │ ├── Dockerfile │ │ ├── app/ │ │ │ ├── main.py │ │ │ ├── requirements.txt │ │ └── tests/ │ │ └── test_main.py │ │ │ └── service-c/ │ ├── Dockerfile │ ├── app/ │ │ ├── main.py │ │ ├── requirements.txt │ └── tests/ │ └── test_main.py │ ├── k8s/ │ ├── service-a-deployment.yaml │ ├── service-b-deployment.yaml │ ├── service-c-deployment.yaml │ ├── service-a-service.yaml │ ├── service-b-service.yaml │ └── service-c-service.yaml │ ├── ci-cd/ │ ├── Jenkinsfile │ └── github-actions/ │ ├── main.yml │ └── README.md
