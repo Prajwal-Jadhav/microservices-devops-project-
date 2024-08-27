@@ -1,0 +1,35 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build Docker images
+      run: |
+        docker build -t service-a:latest services/service-a/.
+        docker build -t service-b:latest services/service-b/.
+        docker build -t service-c:latest services/service-c/.
+
+    - name: Run tests
+      run: |
+        docker run service-a pytest tests/
+        docker run service-b pytest tests/
+        docker run service-c pytest tests/
+
+    - name: Deploy to Kubernetes
+      uses: azure/k8s-deploy@v1
+      with:
+        action: deploy
+        manifests: |
+          k8s/service-a-deployment.yaml
+          k8s/service-b-deployment.yaml
+          k8s/service-c-deployment.yaml
